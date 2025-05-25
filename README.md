@@ -1,4 +1,4 @@
-# Drum Machine
+# Calculator
 
 Made as part of the FreeCodeCamp Frontend Development Libraries Course.
 
