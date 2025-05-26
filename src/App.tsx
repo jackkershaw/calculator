@@ -70,7 +70,7 @@ function App() {
   return (
     <div className="p-3 m-1 bg-neutral-200 min-h-screen flex flex-col items-center justify-center">
       <div className="w-80 bg-neutral-600 p-5 rounded-xl">
-        <div className="bg-green-400/20 text-4xl font-bold p-10 my-5 rounded-xl w-full h-30 flex flex-col justify-center text-right">
+        <div className="bg-green-400/40 text-4xl font-bold p-10 my-5 rounded-xl w-full h-30 flex flex-col justify-center text-right">
           <span id="display" className="text-neutral-900">
             {input}
           </span>
@@ -164,7 +164,11 @@ function App() {
             >
               .
             </button>
-            <button id="equals" onClick={calc} className="bg-red-500 ">
+            <button
+              id="equals"
+              onClick={calc}
+              className="bg-amber-400"
+            >
               =
             </button>
           </div>
