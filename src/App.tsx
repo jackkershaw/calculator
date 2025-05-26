@@ -68,136 +68,137 @@ function App() {
   };
 
   return (
-    <div className="p-3 bg-neutral-200 min-h-screen">
-      <h1 className="text-8xl font-bold">Calculator</h1>
-      <div>
-        <span className="bg-neutral-900 text-white text-4xl font-bold p-10 my-5 rounded-lg w-full h-30 block flex flex-col justify-center text-right">
-          <span id="display" className="text-gray-300">
+    <div className="p-3 m-1 bg-neutral-200 min-h-screen flex flex-col items-center justify-center">
+      <div className="w-80 bg-neutral-600 p-5 rounded-xl">
+        <div className="bg-green-400/20 text-4xl font-bold p-10 my-5 rounded-xl w-full h-30 flex flex-col justify-center text-right">
+          <span id="display" className="text-neutral-900">
             {input}
           </span>
           <span id="output">{output}</span>
-        </span>
-      </div>
-      <div className="grid-cols-3 grid gap-5">
-        <button
-          id="zero"
-          onClick={addZero}
-          className="bg-blue-500 text-white text-4xl font-bold p-3 rounded-lg"
-        >
-          0
-        </button>
-        <button
-          id="one"
-          onClick={() => addNumber("1")}
-          className="bg-blue-500 text-white text-4xl font-bold p-3 rounded-lg"
-        >
-          1
-        </button>
-        <button
-          id="two"
-          onClick={() => addNumber("2")}
-          className="bg-blue-500 text-white text-4xl font-bold p-3 rounded-lg"
-        >
-          2
-        </button>
-        <button
-          id="three"
-          onClick={() => addNumber("3")}
-          className="bg-blue-500 text-white text-4xl font-bold p-3 rounded-lg"
-        >
-          3
-        </button>
-        <button
-          id="four"
-          onClick={() => addNumber("4")}
-          className="bg-blue-500 text-white text-4xl font-bold p-3 rounded-lg"
-        >
-          4
-        </button>
-        <button
-          id="five"
-          onClick={() => addNumber("5")}
-          className="bg-blue-500 text-white text-4xl font-bold p-3 rounded-lg"
-        >
-          5
-        </button>
-        <button
-          onClick={() => addNumber("6")}
-          id="six"
-          className="bg-blue-500 text-white text-4xl font-bold p-3 rounded-lg"
-        >
-          6
-        </button>
-        <button
-          onClick={() => addNumber("7")}
-          id="seven"
-          className="bg-blue-500 text-white text-4xl font-bold p-3 rounded-lg"
-        >
-          7
-        </button>
-        <button
-          id="eight"
-          onClick={() => addNumber("8")}
-          className="bg-blue-500 text-white text-4xl font-bold p-3 rounded-lg"
-        >
-          8
-        </button>
-        <button
-          id="nine"
-          onClick={() => addNumber("9")}
-          className="bg-blue-500 text-white text-4xl font-bold p-3 rounded-lg"
-        >
-          9
-        </button>
-        <button
-          id="decimal"
-          onClick={addDecimal}
-          className="bg-blue-500 text-white text-4xl font-bold p-3 rounded-lg"
-        >
-          .
-        </button>
-        <button
-          id="equals"
-          onClick={calc}
-          className="bg-red-500 text-white text-4xl font-bold p-3 rounded-lg"
-        >
-          =
-        </button>
-        <button
-          id="add"
-          onClick={() => addOperator("+")}
-          className="bg-gray-500 text-white text-4xl font-bold p-3 rounded-lg"
-        >
-          +
-        </button>
-        <button
-          id="subtract"
-          onClick={() => addOperator("-")}
-          className="bg-gray-500 text-white text-4xl font-bold p-3 rounded-lg"
-        >
-          -
-        </button>
-        <button
-          id="multiply"
-          onClick={() => addOperator("*")}
-          className="bg-gray-500 text-white text-4xl font-bold p-3 rounded-lg"
-        >
-          x
-        </button>
-        <button
-          id="divide"
-          onClick={() => addOperator("/")}
-          className="bg-gray-500 text-white text-4xl font-bold p-3 rounded-lg"
-        >
-          ÷
-        </button>
-        <button
-          id="clear"
-          className="bg-black text-white text-4xl font-bold p-3 rounded-lg hover:bg-neutral-900"
-          onClick={clearInput}
-        >
-          C
-        </button>
+        </div>
+        <div className="grid grid-cols-4 gap-3">
+          <button
+            id="clear"
+            className="bg-black hover:bg-neutral-900 col-start-4"
+            onClick={clearInput}
+          >
+            C
+          </button>
+        </div>
+        <div className="grid-cols-4 grid gap-3">
+          <div className="col-span-3 grid-cols-3 grid gap-3">
+            <button
+              id="zero"
+              onClick={addZero}
+              className="bg-neutral-900 "
+            >
+              0
+            </button>
+            <button
+              id="one"
+              onClick={() => addNumber("1")}
+              className="bg-neutral-900 "
+            >
+              1
+            </button>
+            <button
+              id="two"
+              onClick={() => addNumber("2")}
+              className="bg-neutral-900 "
+            >
+              2
+            </button>
+            <button
+              id="three"
+              onClick={() => addNumber("3")}
+              className="bg-neutral-900 "
+            >
+              3
+            </button>
+            <button
+              id="four"
+              onClick={() => addNumber("4")}
+              className="bg-neutral-900 "
+            >
+              4
+            </button>
+            <button
+              id="five"
+              onClick={() => addNumber("5")}
+              className="bg-neutral-900 "
+            >
+              5
+            </button>
+            <button
+              onClick={() => addNumber("6")}
+              id="six"
+              className="bg-neutral-900 "
+            >
+              6
+            </button>
+            <button
+              onClick={() => addNumber("7")}
+              id="seven"
+              className="bg-neutral-900 "
+            >
+              7
+            </button>
+            <button
+              id="eight"
+              onClick={() => addNumber("8")}
+              className="bg-neutral-900 "
+            >
+              8
+            </button>
+            <button
+              id="nine"
+              onClick={() => addNumber("9")}
+              className="bg-neutral-900 "
+            >
+              9
+            </button>
+            <button
+              id="decimal"
+              onClick={addDecimal}
+              className="bg-neutral-900 "
+            >
+              .
+            </button>
+            <button id="equals" onClick={calc} className="bg-red-500 ">
+              =
+            </button>
+          </div>
+          <div className="flex-col flex gap-3">
+            <button
+              id="add"
+              onClick={() => addOperator("+")}
+              className="bg-gray-500 "
+            >
+              +
+            </button>
+            <button
+              id="subtract"
+              onClick={() => addOperator("-")}
+              className="bg-gray-500 "
+            >
+              -
+            </button>
+            <button
+              id="multiply"
+              onClick={() => addOperator("*")}
+              className="bg-gray-500 "
+            >
+              x
+            </button>
+            <button
+              id="divide"
+              onClick={() => addOperator("/")}
+              className="bg-gray-500 "
+            >
+              ÷
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
