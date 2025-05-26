@@ -48,6 +48,32 @@ function App() {
       setInput(input + operator);
       setDecimalCount("0");
       setLastEquals(false);
+    } else if (
+      (input.endsWith("+") ||
+        input.endsWith("*") ||
+        input.endsWith("/")) &&
+      operator == "-"
+    ) {
+      setInput(input + operator);
+      setDecimalCount("0");
+      setLastEquals(false);
+    } else if (
+      input.endsWith("*-") ||
+      input.endsWith("/-") ||
+      input.endsWith("+-")
+    ) {
+      setInput(input.slice(0, -2) + operator);
+      setDecimalCount("0");
+      setLastEquals(false);
+    } else if (
+      input.endsWith("+") ||
+      input.endsWith("*") ||
+      input.endsWith("/") ||
+      input.endsWith("-")
+    ) {
+      setInput(input.slice(0, -1) + operator);
+      setDecimalCount("0");
+      setLastEquals(false);
     } else if (input.endsWith(operator)) {
       return;
     } else {
@@ -57,13 +83,8 @@ function App() {
   };
 
   const calc = () => {
-    //LINK TODO
-    //  clean the input so that two + operators in a row uses the last operator
-    // 5 * - + 5 = 10
-
     const total = eval(input);
     setInput(total);
-
     setDecimalCount("0");
     setLastEquals(true);
   };
