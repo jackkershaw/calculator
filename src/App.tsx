@@ -23,8 +23,6 @@ function App() {
     }
   };
 
-  // will need to rewrite this for multiple decimal numbers // User Story #11: When the decimal element is clicked, a . should append to the currently displayed value; two . in one number should not be accepted.
-
   const addDecimal = () => {
     if (decimalCount == "0") {
       if (lastEquals) {
