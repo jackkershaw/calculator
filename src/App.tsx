@@ -2,13 +2,12 @@ import { useState } from "react";
 
 function App() {
   const [input, setInput] = useState("0");
-  const [output, setOutput] = useState("0");
   const [decimalCount, setDecimalCount] = useState("0");
   const [lastEquals, setLastEquals] = useState(false);
 
   const clearInput = () => {
     setInput("0");
-    setOutput("0");
+
     setLastEquals(false);
     setDecimalCount("0");
   };
@@ -64,7 +63,7 @@ function App() {
 
     const total = eval(input);
     setInput(total);
-    setOutput(total);
+
     setDecimalCount("0");
     setLastEquals(true);
   };
@@ -76,7 +75,6 @@ function App() {
           <span id="display" className="text-neutral-900">
             {input}
           </span>
-          <span id="output">{output}</span>
         </div>
         <div className="grid grid-cols-4 gap-3">
           <button
