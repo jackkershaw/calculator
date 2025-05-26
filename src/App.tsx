@@ -58,6 +58,10 @@ function App() {
   };
 
   const calc = () => {
+    //LINK TODO
+    //  clean the input so that two + operators in a row uses the last operator
+    // 5 * - + 5 = 10
+
     const total = eval(input);
     setInput(total);
     setOutput(total);
