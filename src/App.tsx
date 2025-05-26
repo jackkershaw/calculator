@@ -4,14 +4,18 @@ function App() {
   const [input, setInput] = useState("0");
   const [output, setOutput] = useState("0");
   const [decimalCount, setDecimalCount] = useState("0");
+  const [lastEquals, setLastEquals] = useState(false);
 
   const clearInput = () => {
     setInput("0");
     setOutput("0");
+    setLastEquals(false);
   };
 
   const addNumber = (number: string) => {
-    if (input === "0") {
+    if (lastEquals) {
+      return;
+    } else if (input === "0") {
       setInput(number);
     } else {
       setInput(input + number);
@@ -21,7 +25,9 @@ function App() {
   // will need to rewrite this for multiple decimal numbers // User Story #11: When the decimal element is clicked, a . should append to the currently displayed value; two . in one number should not be accepted.
 
   const addDecimal = () => {
-    if (decimalCount == "0") {
+    if (lastEquals) {
+      return;
+    } else if (decimalCount == "0") {
       setInput(input + ".");
       setDecimalCount("1");
     } else {
@@ -30,7 +36,9 @@ function App() {
   };
 
   const addZero = () => {
-    if (input === "0") {
+    if (lastEquals) {
+      return;
+    } else if (input === "0") {
       return;
     } else {
       addNumber("0");
@@ -38,7 +46,11 @@ function App() {
   };
 
   const addOperator = (operator: string) => {
-    if (input.endsWith(operator)) {
+    if (lastEquals) {
+      setInput(input + operator);
+      setDecimalCount("0");
+      setLastEquals(false);
+    } else if (input.endsWith(operator)) {
       return;
     } else {
       setInput(input + operator);
@@ -47,9 +59,11 @@ function App() {
   };
 
   const calc = () => {
-    setInput(eval(input));
-    setOutput(eval(input));
+    const total = eval(input);
+    setInput(total);
+    setOutput(total);
     setDecimalCount("0");
+    setLastEquals(true);
   };
 
   return (
