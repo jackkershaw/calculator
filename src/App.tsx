@@ -10,6 +10,7 @@ function App() {
     setInput("0");
     setOutput("0");
     setLastEquals(false);
+    setDecimalCount("0");
   };
 
   const addNumber = (number: string) => {
@@ -25,10 +26,10 @@ function App() {
   // will need to rewrite this for multiple decimal numbers // User Story #11: When the decimal element is clicked, a . should append to the currently displayed value; two . in one number should not be accepted.
 
   const addDecimal = () => {
-    if (lastEquals) {
-      return;
-    } else if (decimalCount == "0") {
-      setInput(input + ".");
+    if (decimalCount == "0") {
+      if (lastEquals) {
+        return;
+      } else setInput(input + ".");
       setDecimalCount("1");
     } else {
       return;
